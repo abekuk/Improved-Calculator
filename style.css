@@ -1,0 +1,143 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.2);
+}
+
+.calculator {
+    width: 320px;
+    height: auto;
+    background-color: #000;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); 
+}
+
+.display {
+    background-color: #333;
+    color: #fff;
+    font-size: 4.5rem;
+    text-align: right;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: rtl;
+    transition: font-size 0.3s ease;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.button {
+    font-size: 2rem;
+    width: 70px;
+    height: 70px;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button.operator {
+    background-color: #f9a825;
+    color: white;
+}
+
+.button.zero {
+    grid-column: span 2;
+    width: 150px;
+    border-radius: 50%;
+}
+
+.button:hover {
+    background-color: #ddd;
+}
+
+.operator:hover {
+    background-color: #f57f17;
+}
+
+.developed-by {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 4rem; /* Doubled the size */
+    font-weight: bold;
+    transition: all 0.3s ease; /* Smooth transition for Light Mode */
+}
+
+/* Fraction Mode Button */
+.fraction-mode-btn {
+    position: absolute;
+    bottom: 150px; /* Positioned above the Light Mode button */
+    left: 10px;
+    width: 360px; /* Match Light Mode button size */
+    height: 140px; /* Increased height to accommodate text */
+    font-size: 3.6rem;
+    border-radius: 5px;
+    background-color: black; /* Default black background */
+    color: white;
+    border: 3px solid white; /* Default white border */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.fraction-mode-btn:hover {
+    background-color: #444; /* Slightly lighter black on hover */
+}
+
+/* Light Mode Button */
+.light-mode-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 360px; /* Match Fraction Mode button size */
+    height: 120px; /* Match Fraction Mode button size */
+    font-size: 3.6rem;
+    border-radius: 5px;
+    background-color: black; /* Default black background */
+    color: white;
+    border: 3px solid white; /* Default white border */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.light-mode-btn:hover {
+    background-color: #444; /* Slightly lighter black on hover */
+}
+
+/* Inverted Mode */
+.inverted-mode {
+    filter: invert(1);
+    background-color: #fff; /* Ensure proper inversion of background */
+    color: black; /* Ensure text is inverted too */
+}
+
+.inverted-mode .developed-by {
+    filter: invert(1); /* Invert back to match the rest of the Light Mode */
+    color: black; /* Adjust text color */
+}
+
+.inverted-mode .fraction-mode-btn,
+.inverted-mode .light-mode-btn {
+    background-color: white; /* Inverted white background */
+    color: black; /* Inverted black text */
+    border: 3px solid black; /* Inverted black border */
+}
